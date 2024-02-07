@@ -1,0 +1,162 @@
+/* Reset some default styles */
+body, h1, h2, button {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #28074a;
+    color: #fff;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    background-color: #491088;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center align heading */
+}
+
+h2 i {
+    margin-right: 10px;
+}
+
+button {
+    background-color: #bd4de5;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:not(:last-child) {
+    margin-right: 10px; /* Adjust space between buttons */
+}
+
+button:hover {
+    background-color: #6c1dd0;
+}
+
+button:active {
+    box-shadow: 0 0 10px 3px #ff19db; /* Soft glow effect when button is pressed */
+}
+
+/* Additional styles for specific buttons */
+#lighting button {
+    background-color: #ff19db;
+}
+
+#lighting button:hover {
+    background-color: #ff7f1a;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #bd4de5; /* Default switch color */
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #ff19db; /* Toggle switch color when checked */
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 10px 3px #ff19db;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(85px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+#temperatureDisplay {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#songDisplay {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Responsive styles */
+@media only screen and (min-width: 600px) {
+    main {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
